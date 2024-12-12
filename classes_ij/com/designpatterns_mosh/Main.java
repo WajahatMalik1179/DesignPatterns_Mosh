@@ -16,6 +16,10 @@ public class Main {
         account.withdraw(5);
         System.out.println(account.getBalance());
 
+        System.out.println("\n\t\t***Abstraction***");
+        var mailservice = new MailService();
+        mailservice.sendEmail();
+
     }
 
     public static TaxCalculator getCalculator(){
