@@ -20,9 +20,20 @@ public class Main {
         var mailservice = new MailService();
         mailservice.sendEmail();
 
+        System.out.println("\n\t\t***Inheritance***");
+        var textBox = new TextBox();
+        textBox.enable();
+        textBox.focus();
+        textBox.setPosition();
+        var button = new Button();
+        button.enable();
+        button.setPosition();
+
+
         System.out.println("\n\t\t***Polymorphism***");
         drawUIControl(new TextBox());
         drawUIControl(new CheckBox());
+        drawUIControl(new Button());
 
     }
 
