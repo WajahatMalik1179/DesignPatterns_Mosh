@@ -20,10 +20,18 @@ public class Main {
         var mailservice = new MailService();
         mailservice.sendEmail();
 
+        System.out.println("\n\t\t***Polymorphism***");
+        drawUIControl(new TextBox());
+        drawUIControl(new CheckBox());
+
     }
 
     public static TaxCalculator getCalculator(){
         return new TaxCalculator2024();
+    }
+
+    public static void drawUIControl(UIControl control){
+        control.draw();
     }
 
 }
