@@ -6,6 +6,7 @@ import com.designpatterns_mosh.state.BrushTool;
 import com.designpatterns_mosh.state.Canvas;
 import com.designpatterns_mosh.state.EraserTool;
 import com.designpatterns_mosh.state.SelectionTool;
+import com.designpatterns_mosh.state.abuse.Stopwatch;
 
 public class Main {
     public static void main(String[] args) {
@@ -42,7 +43,7 @@ public class Main {
         drawUIControl(new CheckBox());
         drawUIControl(new Button());
 
-        System.out.println("\n\t\t***Momento Pattern");
+        System.out.println("\n\t\t***Momento Pattern***");
         var editor = new Editor();
         var history = new History();
         editor.setContent("a");
@@ -70,6 +71,13 @@ public class Main {
         canvas.mouseDown();
         canvas.mouseUp();
 
+        System.out.println("\n\t\t***Abuse State Pattern***");
+        var stopwatch = new Stopwatch();
+        stopwatch.click();
+        stopwatch.click();
+        stopwatch.click();
+        stopwatch.click();
+        System.out.println("don't abuse design patters, like in this example we overcomplicated and extended simple logic");
 
     }
 
