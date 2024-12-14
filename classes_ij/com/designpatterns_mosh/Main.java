@@ -1,5 +1,8 @@
 package com.designpatterns_mosh;
 
+import com.designpatterns_mosh.momento.Editor;
+import com.designpatterns_mosh.momento.History;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("\t\t***Classes***");
@@ -35,8 +38,21 @@ public class Main {
         drawUIControl(new CheckBox());
         drawUIControl(new Button());
 
-        System.out.println("Trying to rebase mementopattern branch to main branch");
+        System.out.println("\n\t\t***Momento Pattern");
+        var editor = new Editor();
+        var history = new History();
+        editor.setContent("a");
+        history.push(editor.createState());
 
+        editor.setContent("b");
+        history.push(editor.createState());
+
+        editor.setContent("c");
+        history.push(editor.createState());
+
+        editor.restore(history.pull());
+        editor.restore(history.pull());
+        System.out.println(editor.getContent());
     }
 
     public static TaxCalculator getCalculator(){
