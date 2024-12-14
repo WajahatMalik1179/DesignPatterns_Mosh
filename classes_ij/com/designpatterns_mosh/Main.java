@@ -2,6 +2,10 @@ package com.designpatterns_mosh;
 
 import com.designpatterns_mosh.momento.Editor;
 import com.designpatterns_mosh.momento.History;
+import com.designpatterns_mosh.state.BrushTool;
+import com.designpatterns_mosh.state.Canvas;
+import com.designpatterns_mosh.state.EraserTool;
+import com.designpatterns_mosh.state.SelectionTool;
 
 public class Main {
     public static void main(String[] args) {
@@ -53,6 +57,19 @@ public class Main {
         editor.restore(history.pull());
         editor.restore(history.pull());
         System.out.println(editor.getContent());
+
+        System.out.println("\n\t\t***State Pattern***");
+        var canvas = new Canvas();
+        canvas.setCurrentTool(new SelectionTool());
+        canvas.mouseDown();
+        canvas.mouseUp();
+        canvas.setCurrentTool(new BrushTool());
+        canvas.mouseDown();
+        canvas.mouseUp();
+        canvas.setCurrentTool(new EraserTool());
+        canvas.mouseDown();
+        canvas.mouseUp();
+
 
     }
 
