@@ -53,6 +53,7 @@ public class Main {
         editor.restore(history.pull());
         editor.restore(history.pull());
         System.out.println(editor.getContent());
+
     }
 
     public static TaxCalculator getCalculator(){
