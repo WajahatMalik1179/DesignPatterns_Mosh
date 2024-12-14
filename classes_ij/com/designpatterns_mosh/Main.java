@@ -35,6 +35,8 @@ public class Main {
         drawUIControl(new CheckBox());
         drawUIControl(new Button());
 
+        System.out.println("Trying to rebase mementopattern branch to main branch");
+
     }
 
     public static TaxCalculator getCalculator(){
